@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "test",
-    "slug": "test",
-    "version": "1.0.0",
+    "slug": "roulette-breakdown",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.bestwade.roulettebreakdown"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +32,12 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f1d09cb0-b71e-432a-b179-9e18abb36b76"
+      }
+    },
+    "owner": "bestwade"
   }
 }
