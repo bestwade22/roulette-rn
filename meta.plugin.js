@@ -25,4 +25,4 @@ const withFacebookSDK = (config)=>{
     return config
 };
 
-export default withFacebookSDK
+module.exports = withFacebookSDK;
