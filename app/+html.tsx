@@ -1,11 +1,18 @@
 import { ScrollViewStyleReset } from 'expo-router/html';
 import { type PropsWithChildren } from 'react';
-
+import { InterstitialAdManager } from 'react-native-fbads';
 /**
  * This file is web-only and used to configure the root HTML for every web page during static rendering.
  * The contents of this function only run in Node.js environments and do not have access to the DOM or browser APIs.
  */
 export default function Root({ children }: PropsWithChildren) {
+  InterstitialAdManager.preloadAd(process.env.FB_PLACEMENT_ID_FULL?? '')
+  .then((didClick) => {})
+  .catch((error) => {});
+
+// Will show it if already loaded, or wait for it to load and show it.
+  InterstitialAdManager.showPreloadedAd(process.env.FB_PLACEMENT_ID_FULL?? '');
+
   return (
     <html lang="en">
       <head>
