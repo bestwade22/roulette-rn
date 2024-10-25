@@ -6,9 +6,7 @@ const {
 const withFacebookSDK = (config) => {
   // To add meta-data in AndroidManifest file
   config = withAndroidManifest(config, (config) => {
-    console.log(config);
     const androidManifest = config.modResults;
-    console.log(androidManifest);
     // Check if the meta-data elements are already present
     const appActivityData =
       androidManifest.manifest.application[0].activity || [];

@@ -13,14 +13,29 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSUserTrackingUsageDescription": "This identifier will be used to deliver personalized ads to you.",
+        "SKAdNetworkItems": [
+          {
+            "SKAdNetworkIdentifier": "v9wttpbfk9.skadnetwork"
+          },
+          {
+            "SKAdNetworkIdentifier": "n38lu8286q.skadnetwork"
+          }
+        ]
+      },
+      "bundleIdentifier": "com.bestwade.roulettebreakdown"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.bestwade.roulettebreakdown"
+      "package": "com.bestwade.roulettebreakdown",
+      "permissions": [
+        "android.permission.INTERNET"
+      ]
     },
     "web": {
       "bundler": "metro",
