@@ -27,7 +27,7 @@ export default function RootLayout() {
       InterstitialAdManager.showAd(
         process.env.EXPO_PUBLIC_FB_PLACEMENT_ID_FULL ?? ''
       )
-        .then((didClick) => {})
+        .then((didClick) => {alert(didClick)})
         .catch((error) => {alert(error)});
     }
   }, [loaded]);
