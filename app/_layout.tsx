@@ -24,12 +24,12 @@ export default function RootLayout() {
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
+      InterstitialAdManager.showAd(
+        process.env.EXPO_PUBLIC_FB_PLACEMENT_ID_FULL ?? ''
+      )
+        .then((didClick) => {})
+        .catch((error) => {alert(error)});
     }
-    InterstitialAdManager.showAd(
-      process.env.EXPO_PUBLIC_FB_PLACEMENT_ID_FULL ?? ''
-    )
-      .then((didClick) => {})
-      .catch((error) => {alert(error)});
   }, [loaded]);
 
   if (!loaded) {
