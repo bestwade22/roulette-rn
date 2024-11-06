@@ -24,11 +24,13 @@ export default function RootLayout() {
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
-      InterstitialAdManager.showAd(
-        process.env.EXPO_PUBLIC_FB_PLACEMENT_ID_FULL ?? ''
-      )
-        .then((didClick) => {alert(didClick)})
-        .catch((error) => {alert(error)});
+      InterstitialAdManager.preloadAd(process.env.EXPO_PUBLIC_FB_PLACEMENT_ID_FULL ?? '')
+  .then((didClick) => {alert(didClick)})
+  .catch((error) => {alert(error)});
+
+// Will show it if already loaded, or wait for it to load and show it.
+InterstitialAdManager.showPreloadedAd(process.env.EXPO_PUBLIC_FB_PLACEMENT_ID_FULL ?? '');
+
     }
   }, [loaded]);
 
