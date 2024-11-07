@@ -7,8 +7,7 @@ const withFacebookSDK = (config) => {
   // To add dependencies in build.gradle file
   config = withAppBuildGradle(config, (config) => {
     const dependenciesToAdd = `implementation 'com.facebook.android:facebook-android-sdk:latest.release'\n
-                                implementation 'androidx.work:work-runtime:2.8.0'\n
-                                implementation 'androidx.work:work-runtime-ktx:2.8.0'`;
+                                implementation 'androidx.work:work-runtime:2.7.1'`;
     config.modResults.contents = config.modResults.contents.replace(
       'dependencies {',
       `dependencies {\n${dependenciesToAdd}`
