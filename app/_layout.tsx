@@ -17,7 +17,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default async function RootLayout() {
   const colorScheme = useColorScheme();
-  AdSettings.setLogLevel('debug');
+  // AdSettings.setLogLevel('debug');
   // AdSettings.addTestDevice(AdSettings.currentDeviceHash);
   // const requestedStatus = await AdSettings.requestTrackingPermission();
 
