@@ -50,9 +50,9 @@
         {
           "appID": "1513513462685414",
           "clientToken": "b52c1f219b2d8982018d1dd5f9864628",
-          "displayName": "RN SDK Demo",
+          "displayName": "RN FB SDK",
           "advertiserIDCollectionEnabled": false,
-          "autoLogAppEventsEnabled": false,
+          "autoLogAppEventsEnabled": true,
           "isAutoInitEnabled": true,
           "iosUserTrackingPermission": "This identifier will be used to deliver personalized ads to you."
         }
