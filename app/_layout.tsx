@@ -18,15 +18,15 @@ SplashScreen.preventAutoHideAsync();
 export default async function RootLayout() {
   const colorScheme = useColorScheme();
   AdSettings.setLogLevel('debug');
-  AdSettings.addTestDevice(AdSettings.currentDeviceHash);
-  const requestedStatus = await AdSettings.requestTrackingPermission();
+  // AdSettings.addTestDevice(AdSettings.currentDeviceHash);
+  // const requestedStatus = await AdSettings.requestTrackingPermission();
 
-  if (requestedStatus === 'authorized' || requestedStatus === 'unavailable') {
-    AdSettings.setAdvertiserIDCollectionEnabled(true);
-    // Both calls are not related to each other
-    // FB won't deliver any ads if this is set to false or not called at all.
-    AdSettings.setAdvertiserTrackingEnabled(true);
-  }
+  // if (requestedStatus === 'authorized' || requestedStatus === 'unavailable') {
+  //   AdSettings.setAdvertiserIDCollectionEnabled(true);
+  //   // Both calls are not related to each other
+  //   // FB won't deliver any ads if this is set to false or not called at all.
+  //   AdSettings.setAdvertiserTrackingEnabled(true);
+  // }
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
