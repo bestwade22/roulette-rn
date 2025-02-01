@@ -33,16 +33,16 @@ export default async function RootLayout() {
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
   useEffect(() => {
-    // if (loaded) {
-    //   SplashScreen.hideAsync();
-    //   InterstitialAdManager.showAd(process.env.EXPO_PUBLIC_FB_PLACEMENT_ID_FULL ?? '')
-    //   .then((didClick) => {
-    //     alert(didClick);
-    //   })
-    //   .catch((error) => {
-    //     alert(error);
-    //   });
-    // }
+    if (loaded) {
+      SplashScreen.hideAsync();
+      // InterstitialAdManager.showAd(process.env.EXPO_PUBLIC_FB_PLACEMENT_ID_FULL ?? '')
+      // .then((didClick) => {
+      //   alert(didClick);
+      // })
+      // .catch((error) => {
+      //   alert(error);
+      // });
+    }
     
   }, [loaded]);
   useEffect(() => {
