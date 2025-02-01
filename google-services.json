@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "783126879001",
+    "project_id": "roulette-breakdown-1",
+    "storage_bucket": "roulette-breakdown-1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783126879001:android:9ef9345f28c28f3b08c388",
+        "android_client_info": {
+          "package_name": "com.bestwade.roulettebreakdown"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLQDgJGSK7K_cBddQwbFP1wDaJMSmQIyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

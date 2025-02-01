@@ -9,7 +9,9 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { AdSettings, InterstitialAdManager } from 'react-native-fbads';
+import mobileAds from 'react-native-google-mobile-ads';
 
+// Make sure to always use a test ID when not in production 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -31,18 +33,31 @@ export default async function RootLayout() {
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
   useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-      InterstitialAdManager.showAd(process.env.EXPO_PUBLIC_FB_PLACEMENT_ID_FULL ?? '')
-      .then((didClick) => {
-        alert(didClick);
-      })
-      .catch((error) => {
-        alert(error);
-      });
-    }
+    // if (loaded) {
+    //   SplashScreen.hideAsync();
+    //   InterstitialAdManager.showAd(process.env.EXPO_PUBLIC_FB_PLACEMENT_ID_FULL ?? '')
+    //   .then((didClick) => {
+    //     alert(didClick);
+    //   })
+    //   .catch((error) => {
+    //     alert(error);
+    //   });
+    // }
+    
   }, [loaded]);
+  useEffect(() => {
+    (async () => {
+      // Google AdMob will show any messages here that you just set up on the AdMob Privacy & Messaging page
+      // const { status: trackingStatus } =
+      //   await requestTrackingPermissionsAsync();
+      // if (trackingStatus !== 'granted') {
+      //   // Do something here such as turn off Sentry tracking, store in context/redux to allow for personalized ads, etc.
+      // }
 
+      // Initialize the ads
+      await mobileAds().initialize();
+    })();
+  }, []);
   if (!loaded) {
     return null;
   }
