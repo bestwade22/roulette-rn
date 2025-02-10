@@ -48,7 +48,7 @@ const WebviewComponent = () => {
     />
   ) : (
     <WebView
-      source={{ uri: process.env.EXPO_PUBLIC_API_URL ?? '' }}
+      source={{ uri: process.env.EXPO_PUBLIC_API_URL ?? 'google.com' }}
       style={{ flex: 1 }}
     />
   );

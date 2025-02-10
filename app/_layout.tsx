@@ -1,64 +1,52 @@
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from '@react-navigation/native';
+import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-import { AdSettings, InterstitialAdManager } from 'react-native-fbads';
 import mobileAds from 'react-native-google-mobile-ads';
 
-// Make sure to always use a test ID when not in production 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
-export default async function RootLayout() {
+export default function RootLayout() {
+  console.debug("start root");
   const colorScheme = useColorScheme();
-  // AdSettings.setLogLevel('debug');
-  // AdSettings.addTestDevice(AdSettings.currentDeviceHash);
-  // const requestedStatus = await AdSettings.requestTrackingPermission();
-
-  // if (requestedStatus === 'authorized' || requestedStatus === 'unavailable') {
-  //   AdSettings.setAdvertiserIDCollectionEnabled(true);
-  //   // Both calls are not related to each other
-  //   // FB won't deliver any ads if this is set to false or not called at all.
-  //   AdSettings.setAdvertiserTrackingEnabled(true);
-  // }
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
   useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-      // InterstitialAdManager.showAd(process.env.EXPO_PUBLIC_FB_PLACEMENT_ID_FULL ?? '')
-      // .then((didClick) => {
-      //   alert(didClick);
-      // })
-      // .catch((error) => {
-      //   alert(error);
-      // });
-    }
-    
-  }, [loaded]);
-  useEffect(() => {
-    (async () => {
-      // Google AdMob will show any messages here that you just set up on the AdMob Privacy & Messaging page
-      // const { status: trackingStatus } =
-      //   await requestTrackingPermissionsAsync();
-      // if (trackingStatus !== 'granted') {
-      //   // Do something here such as turn off Sentry tracking, store in context/redux to allow for personalized ads, etc.
-      // }
+    console.debug("start useef");
 
-      // Initialize the ads
-      await mobileAds().initialize();
-    })();
+    // Google AdMob will show any messages here that you just set up on the AdMob Privacy & Messaging page
+    // const { status: trackingStatus } =
+    //   await requestTrackingPermissionsAsync();
+    // if (trackingStatus !== 'granted') {
+    //   // Do something here such as turn off Sentry tracking, store in context/redux to allow for personalized ads, etc.
+    // }
+
+    // Initialize the ads
+    mobileAds().initialize();
+
+    console.debug("finish useef");
+
   }, []);
+
+  useEffect(() => {
+    console.debug("start loaded useeff");
+
+    if (loaded) {
+      console.debug(" loaded func");
+      SplashScreen.hideAsync();
+    }
+    console.debug("finish loaded useeff");
+  }, [loaded]);
+
   if (!loaded) {
+    console.debug("not loaded func");
+
     return null;
   }
 
