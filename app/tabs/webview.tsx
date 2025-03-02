@@ -2,7 +2,6 @@ import React, { Component, useEffect, useState } from 'react';
 import { Platform, Text, View } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { AdEventType, InterstitialAd, TestIds } from 'react-native-google-mobile-ads';
-import * as Device from 'expo-device';
 
 const iosAdmobInterstitial = "ca-app-pub-12345678910/12345678910";
 const androidAdmobInterstitial = "ca-app-pub-12345678910/12345678910";
